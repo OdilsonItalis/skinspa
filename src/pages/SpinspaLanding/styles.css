@@ -1,0 +1,192 @@
+.carouselItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carouselImgItem {
+  width: 100%;
+}
+
+.carousel-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow_next {
+  right: 20px;
+}
+
+.arrow_prev {
+  left: 20px;
+}
+
+.arrows {
+  width: 44px;
+  max-width: 44px;
+  height: 44px;
+  position: absolute;
+  z-index: 1;
+  cursor: pointer;
+  pointer-events: all !important;
+}
+
+.arrows:hover {
+  opacity: 0.8;
+}
+
+.carouselDescItem {
+  position: absolute;
+  z-index: 1;
+  max-width: 500px;
+  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  left: 0;
+  margin-left: 10%;
+}
+
+.heroTitle {
+  margin: 0;
+  font-weight: 400;
+  font-size: 45px;
+  line-height: 57px;
+  color: #ffffff;
+  text-align: left;
+}
+
+.heroDescription {
+  margin: 0;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 20px;
+  color: #ffffff;
+  margin-top: 18px;
+  text-align: left;
+}
+
+.heroBookNowBtn {
+  margin: 0;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 20px;
+  color: #ffffff;
+  padding: 20px 45px;
+  border: 2px solid #ffffff;
+  background-color: transparent;
+  margin-top: 30px;
+}
+
+.aboutUsSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 120px;
+  padding-bottom: 100px;
+}
+
+.aboutUsDescContainer {
+  max-width: 420px;
+}
+
+.aboutUsImg {
+  max-width: 640px;
+  margin-right: 60px;
+}
+
+.aboutUs {
+  margin: 0;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 57px;
+  color: #000000;
+}
+
+.aboutUsSubTitle {
+  margin: 0;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 20px;
+  color: #2d2d2d;
+  margin-top: 15px;
+}
+
+.aboutUsDescWrapper {
+  margin-top: 20px;
+  border-left: 4px solid #fcc761;
+  padding: 5px 0 5px 25px;
+}
+
+.aboutUsDesc {
+  margin: 0;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  color: #a0a0a0;
+}
+
+.bookNowBtn {
+  padding: 20px 50px;
+  border: 2px solid #fcc761;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 20px;
+  color: #fcc761;
+  background-color: #fff;
+  cursor: pointer;
+  margin-top: 40px;
+}
+
+.bookNowBtn:hover {
+  opacity: 0.8;
+}
+
+@media only screen and (max-width: 1250px) {
+  .aboutUsImg {
+    width: 40%;
+  }
+
+  .aboutUsDescContainer {
+    width: 40%;
+  }
+}
+
+@media only screen and (max-width: 860px) {
+  .aboutUsSection {
+    flex-direction: column;
+  }
+
+  .aboutUsImg {
+    width: 80%;
+  }
+
+  .aboutUsDescContainer {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 20px;
+    margin-top: 50px;
+  }
+
+  .carouselDescItem {
+    max-width: 70%;
+  }
+
+  .heroTitle {
+    font-size: 25px;
+    line-height: 30px;
+  }
+
+  .heroDescription {
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .heroBookNowBtn {
+    font-size: 11px;
+    padding: 6px 15px;
+    margin-top: 10px;
+  }
+}

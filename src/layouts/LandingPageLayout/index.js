@@ -1,40 +1,58 @@
-import React from "react";
-import styles from "./styles.module.css";
+import React, { useRef, useEffect } from "react";
+import useWindowWidth from "../../hooks/useWindowSize";
+
+import "./styles.css";
 
 const LandingPageLayout = ({ children }) => {
+  const mobileMenu = useRef();
+  const { width } = useWindowWidth();
+
+  const toggleMobileMenu = () => {
+    const classNames = mobileMenu.current.className;
+    if (!classNames.includes("mobileShow")) {
+      mobileMenu.current.className = `${mobileMenu.current.className} mobileShow`;
+    } else {
+      mobileMenu.current.className = "navListWrapper";
+    }
+  };
+
+  useEffect(() => {
+    if (width < 1020) {
+      const classNames = mobileMenu.current.className;
+      if (classNames.includes("mobileShow")) {
+        mobileMenu.current.className = "navListWrapper";
+      }
+    }
+  }, [width]);
   return (
-    <div className={styles.container}>
-      <div className={styles.header}>
-        <img src="images/logo.png" alt="Logo" className={styles.logoImage} />
-        <div className={styles.headerNavWrapper}>
-          <p className={styles.navText}>
-            <img
-              src="images/icons/phone.png"
-              alt="Phone"
-              className={styles.navIcon}
-            />
+    <div>
+      <div className="header">
+        <img src="images/logo.png" alt="Logo" className="logoImage" />
+        <div ref={mobileMenu} className="navListWrapper">
+          <p className="navText">
+            <img src="images/icons/phone.png" alt="Phone" className="navIcon" />
             (262) 555-0131
           </p>
-          <p className={styles.navText}>
-            <img
-              src="images/icons/mail.png"
-              alt="Mail"
-              className={styles.navIcon}
-            />
+          <p className="navText">
+            <img src="images/icons/mail.png" alt="Mail" className="navIcon" />
             hey@ygritte.com
           </p>
-          <ul className={styles.navList}>
-            <li className={`${styles.navItem} ${styles.navItem_highlighted}`}>
-              About Us
-            </li>
-            <li className={styles.navItem}>Experts</li>
-            <li className={styles.navItem}>Services</li>
-            <li className={styles.navItem}>Prices</li>
-            <li className={styles.navItem}>Portfolio</li>
-            <li className={styles.navItem}>Contact</li>
+          <ul className="navList">
+            <li className="navItem navItem_highlighted">About Us</li>
+            <li className="navItem">Experts</li>
+            <li className="navItem">Services</li>
+            <li className="navItem">Prices</li>
+            <li className="navItem">Portfolio</li>
+            <li className="navItem">Contact</li>
           </ul>
-          <button className={styles.bookNowBtn}>Book Now</button>
         </div>
+        <button className="headerBookNowBtn">Book Now</button>
+        <img
+          src="images/icons/menu.png"
+          alt="Mobile Menu"
+          className="mobileMenuIcon"
+          onClick={toggleMobileMenu}
+        />
       </div>
       {children}
     </div>

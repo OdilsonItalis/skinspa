@@ -1,0 +1,156 @@
+.header {
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 10px 100px;
+  position: relative;
+}
+
+.logoImage {
+  width: 150px;
+  height: auto;
+}
+
+.navListWrapper {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.navText {
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  color: #313131;
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.navIcon {
+  margin-right: 10px;
+}
+
+.navList {
+  padding: 0;
+  padding: 3px 0;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  border-left: 1px solid #dddddd;
+}
+
+.navItem {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: #000000;
+  margin: 0 20px;
+  cursor: pointer;
+}
+
+.navItem:hover {
+  opacity: 0.8;
+}
+
+.navItem_highlighted {
+  color: #fcc760;
+}
+
+.headerBookNowBtn {
+  padding: 10px 20px;
+  border: 1px solid #fcc761;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  color: #fcc761;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.headerBookNowBtn:hover {
+  opacity: 0.8;
+}
+
+.mobileMenuIcon {
+  width: 25px;
+  cursor: pointer;
+  margin-left: 10px;
+  display: none;
+}
+
+.mobileMenuIcon:hover {
+  opacity: 0.8;
+}
+
+@media only screen and (max-width: 1280px) {
+  .header {
+    padding: 10px 30px;
+  }
+
+  .navItem {
+    margin: 0 8px;
+  }
+}
+
+.mobileShow {
+  display: flex !important;
+  animation-name: mobileShow;
+  animation-duration: 0.4s;
+}
+
+@media only screen and (max-width: 1020px) {
+  .mobileMenuIcon {
+    display: block;
+  }
+
+  .header {
+    height: 75px;
+  }
+
+  .navListWrapper {
+    position: fixed;
+    background-color: #fff;
+    height: calc(100vh - 75px);
+    margin-top: 75px;
+    z-index: 10;
+    right: 0;
+    top: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px 20px;
+    width: 250px;
+    display: none;
+  }
+
+  .navList {
+    border: none;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navItem {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+
+  .navText {
+    margin: 5px 0;
+  }
+
+  .headerBookNowBtn {
+    margin-left: auto;
+    margin-right: 20px;
+  }
+}
+
+@keyframes mobileShow {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 250px;
+  }
+}
